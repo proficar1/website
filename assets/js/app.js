@@ -133,7 +133,7 @@
       } else {
         modal.setAttribute('open', '');
       }
-      body.classList.add('has-modal');
+      root.classList.add('has-modal');
     }
 
     grid.addEventListener('click', function (e) {
@@ -150,7 +150,7 @@
       });
       // Ein Punkt für alle Wege hinaus: Button, Backdrop und Escape.
       modal.addEventListener('close', function () {
-        body.classList.remove('has-modal');
+        root.classList.remove('has-modal');
       });
     }
 

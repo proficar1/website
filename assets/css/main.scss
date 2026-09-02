@@ -120,7 +120,7 @@
 *, *::before, *::after { box-sizing: border-box; }
 * { margin: 0; }
 
-html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; }
+html { scroll-behavior: smooth; scroll-padding-top: 96px; -webkit-text-size-adjust: 100%; scrollbar-gutter: stable; }
 
 body {
   font-family: var(--font);
@@ -608,8 +608,10 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 }
 @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.97); } }
 
-/* Solange der Dialog offen ist, soll die Seite dahinter nicht wegrutschen. */
-body.has-modal { overflow: hidden; }
+/* Solange der Dialog offen ist, soll die Seite dahinter nicht wegrutschen.
+   Die Sperre muss am <html>-Element hängen: body ist hier nicht der
+   Scroll-Container, ein overflow:hidden dort bliebe wirkungslos. */
+:root.has-modal { overflow: hidden; }
 
 .modal-inner { display: grid; grid-template-columns: 300px 1fr; max-height: #{"min(90vh, 800px)"}; }
 .modal-media { background: #fff; display: grid; place-items: center; padding: 1.5rem; }
