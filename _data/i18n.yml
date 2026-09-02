@@ -109,6 +109,11 @@ de:
     legal: Rechtliches
     imprint: Impressum
     privacy: Datenschutz
+    phone_label: Tel.
+    fax_label: Fax
+    vat_label: MwSt.-Nr.
+    tax_code_label: Steuernummer
+    rea_label: Firmenregister-Nr. REA
     rights: Alle Rechte vorbehalten.
     proto: Prototyp – Inhalte und Preise unverbindlich.
   wa:
@@ -224,6 +229,11 @@ it:
     legal: Note legali
     imprint: Note legali
     privacy: Privacy
+    phone_label: Tel.
+    fax_label: Fax
+    vat_label: Part. IVA
+    tax_code_label: Codice fiscale
+    rea_label: N. REA
     rights: Tutti i diritti riservati.
     proto: Prototipo – contenuti e prezzi non vincolanti.
   wa:

@@ -7,6 +7,7 @@
   {% assign country = site.company.country_it %}
   {% assign city = site.company.city_it %}
   {% assign street = site.company.street_it %}
+  {% assign legal = site.company.legal_it %}
 {% else %}
   {% assign home = '/' %}
   {% assign prods = '/produkte/' %}
@@ -14,6 +15,7 @@
   {% assign country = site.company.country_de %}
   {% assign city = site.company.city %}
   {% assign street = site.company.street %}
+  {% assign legal = site.company.legal %}
 {% endif %}
 
 <footer class="site-footer">
@@ -26,10 +28,19 @@
     <div>
       <h4>{{ t.footer.company }}</h4>
       <p class="muted">
-        {{ site.company.legal }}<br>
+        {{ legal }}<br>
         {{ street }}<br>
         {{ site.company.zip }} {{ city }} ({{ site.company.province }})<br>
         {{ country }}
+      </p>
+      <p class="muted">
+        {{ t.footer.phone_label }}
+        <a href="tel:+{{ site.company.phone_raw }}">{{ site.company.phone }}</a><br>
+        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+      </p>
+      <p class="muted small">
+        {{ t.footer.vat_label }} {{ site.company.vat }}<br>
+        {{ t.footer.rea_label }} {{ site.company.rea }}
       </p>
     </div>
 
@@ -59,7 +70,7 @@
   </div>
 
   <div class="wrap footer-bottom">
-    <p class="muted small">© {{ 'now' | date: "%Y" }} ProfiCar1 · {{ site.company.legal }}. {{ t.footer.rights }}</p>
+    <p class="muted small">© {{ 'now' | date: "%Y" }} ProfiCar1 · {{ legal }}. {{ t.footer.rights }}</p>
     <p class="muted small">{{ t.footer.proto }}</p>
   </div>
 </footer>

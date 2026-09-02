@@ -13,6 +13,7 @@ baseurl: ""
 
 company:
   legal: Topautotruck des Lazov Ljubisa
+  legal_it: Topautotruck di Lazov Ljubisa
   street: St. Ursula Straße 1
   street_it: Via Sant'Orsola 1
   zip: "39025"
@@ -22,6 +23,15 @@ company:
   country_de: Italien
   country_it: Italia
   email: topautotruck@hotmail.com
+  # Firmenanschluss – die Mobilnummern der Ansprechpartner stehen unter contacts.
+  phone: "+39 0473 668403"
+  phone_raw: "390473668403"
+  fax: "+39 0473 668403"
+  # Steuer- und Registerangaben. Die Partita IVA ist in Italien
+  # Pflichtangabe auf der Website.
+  vat: "02797750219"
+  tax_code: "LZVLBS71D06Z148A"
+  rea: "BZ 206503"
 
 contacts:
   - name: Ljubisa Lazov

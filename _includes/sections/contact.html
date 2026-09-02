@@ -4,10 +4,12 @@
   {% assign country = site.company.country_it %}
   {% assign city = site.company.city_it %}
   {% assign street = site.company.street_it %}
+  {% assign legal = site.company.legal_it %}
 {% else %}
   {% assign country = site.company.country_de %}
   {% assign city = site.company.city %}
   {% assign street = site.company.street %}
+  {% assign legal = site.company.legal %}
 {% endif %}
 
 <section class="section" id="contact">
@@ -39,9 +41,18 @@
       </div>
 
       <address class="contact-address muted">
-        <b>{{ site.company.legal }}</b><br>
+        <b>{{ legal }}</b><br>
         {{ street }}<br>
         {{ site.company.zip }} {{ city }} ({{ site.company.province }}) · {{ country }}
+        <br><br>
+        {{ t.footer.phone_label }}
+        <a href="tel:+{{ site.company.phone_raw }}">{{ site.company.phone }}</a><br>
+        {{ t.footer.fax_label }} {{ site.company.fax }}<br>
+        <a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a>
+        <br><br>
+        {{ t.footer.vat_label }} {{ site.company.vat }}<br>
+        {{ t.footer.tax_code_label }} {{ site.company.tax_code }}<br>
+        {{ t.footer.rea_label }} {{ site.company.rea }}
       </address>
     </div>
 
