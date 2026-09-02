@@ -201,12 +201,14 @@
       e.preventDefault();
       if (!form.reportValidity()) return;
 
-      var action = form.getAttribute('action') || '';
-      if (action.indexOf('DEINE-FORM-ID') !== -1) {
-        // Prototyp: noch kein Postfach verbunden – direkt auf WhatsApp umleiten.
+      // Solange kein Access Key hinterlegt ist, bleibt WhatsApp der Weg.
+      var key = form.dataset.key || '';
+      if (!key || key.indexOf('ACCESS-KEY') !== -1) {
         if (waBtn) waBtn.click();
         return;
       }
+
+      var action = form.getAttribute('action') || '';
 
       var btn = form.querySelector('button[type="submit"]');
       if (btn) btn.disabled = true;

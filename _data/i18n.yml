@@ -94,6 +94,7 @@ de:
     privacy: >-
       Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage
       gespeichert werden.
+    subject: "Neue Anfrage über die ProfiCar1-Website"
     submit: Anfrage senden
     or: oder
     via_whatsapp: Stattdessen per WhatsApp senden
@@ -208,6 +209,7 @@ it:
     privacy: >-
       Acconsento alla memorizzazione dei miei dati per l'elaborazione della
       richiesta.
+    subject: "Nuova richiesta dal sito ProfiCar1"
     submit: Invia richiesta
     or: oppure
     via_whatsapp: Invia invece su WhatsApp

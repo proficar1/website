@@ -42,9 +42,13 @@ contacts:
 # Haupt-WhatsApp-Kontakt für Buttons und Formular-Fallback
 whatsapp: "393514061616"
 
-# Formspree-Endpunkt – im Prototyp ein Platzhalter.
-# Unter https://formspree.io ein Formular anlegen und die ID hier eintragen.
-formspree: "https://formspree.io/f/DEINE-FORM-ID"
+# Kontaktformular: Web3Forms (https://web3forms.com).
+# Der Access Key ist keine geheime Angabe – er steht in jeder Web3Forms-Seite
+# offen im Quelltext und taugt nur zum Zustellen an genau ein Postfach.
+# Den Key kostenlos auf web3forms.com mit der Zieladresse anfordern; solange
+# hier der Platzhalter steht, leitet das Formular auf WhatsApp um.
+# Zieladresse: martin.topautotruck@outlook.com (Martin Lazov)
+web3forms_key: "ACCESS-KEY-EINTRAGEN"
 
 collections:
   products:

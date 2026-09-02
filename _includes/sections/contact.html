@@ -46,7 +46,16 @@
     </div>
 
     <div class="contact-form-wrap">
-      <form class="contact-form" id="contactForm" action="{{ site.formspree }}" method="post" novalidate>
+      <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit"
+            method="post" novalidate data-key="{{ site.web3forms_key }}">
+        {% comment %}
+          Web3Forms erwartet den Access Key als Feld. Er ist nicht geheim: er
+          benennt nur das Postfach, an das zugestellt wird, und steht bei jeder
+          Web3Forms-Seite offen im Quelltext.
+        {% endcomment %}
+        <input type="hidden" name="access_key" value="{{ site.web3forms_key }}">
+        <input type="hidden" name="subject" value="{{ t.form.subject }}">
+        <input type="hidden" name="from_name" value="ProfiCar1 Website">
         <div class="field-row">
           <label class="field">
             <span>{{ t.form.name }} *</span>
@@ -89,7 +98,8 @@
           <span class="small muted">{{ t.form.privacy }}</span>
         </label>
 
-        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+        {% comment %} Köderfeld gegen Bots – Web3Forms verwirft alles, was hier ankommt. {% endcomment %}
+        <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
 
         <div class="form-actions">
           <button class="btn btn--primary" type="submit">{{ t.form.submit }}</button>

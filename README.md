@@ -52,7 +52,7 @@ Alles Redaktionelle liegt in Daten- und Konfigurationsdateien — kein HTML nöt
 | `_products/` | **Eine Datei pro Produkt** — siehe unten |
 | `_data/categories.yml` | Die fünf Produktbereiche mit Beschreibungstexten |
 | `_data/i18n.yml` | Sämtliche Oberflächentexte in DE und IT |
-| `_config.yml` | Firmendaten, Ansprechpartner, WhatsApp-Nummer, Formspree-Endpunkt |
+| `_config.yml` | Firmendaten, Ansprechpartner, WhatsApp-Nummer, Web3Forms-Key |
 
 ### Ein Produkt anlegen
 
@@ -131,9 +131,23 @@ Danach in den Pages-Einstellungen *Enforce HTTPS* aktivieren.
 
 ### Kontaktformular scharf schalten
 
-Auf [formspree.io](https://formspree.io) ein Formular anlegen und die ID in
-`_config.yml` unter `formspree` eintragen. Solange dort der Platzhalter steht,
-leitet das Formular auf WhatsApp um.
+Das Formular schickt seine Angaben per JavaScript an
+[Web3Forms](https://web3forms.com); von dort gehen sie als E-Mail an das
+hinterlegte Postfach. Ein Konto braucht es nicht:
+
+1. Auf [web3forms.com](https://web3forms.com) die Zieladresse eintragen —
+   für ProfiCar1 `martin.topautotruck@outlook.com`
+2. Den per E-Mail zugestellten **Access Key** in `_config.yml` unter
+   `web3forms_key` eintragen
+
+Solange dort der Platzhalter steht, leitet das Formular auf WhatsApp um. Der
+Key ist keine geheime Angabe — er steht bei jeder Web3Forms-Seite offen im
+Quelltext und taugt nur zum Zustellen an genau dieses eine Postfach.
+
+Der kostenlose Tarif deckt 250 Zusendungen im Monat ab. Die Server stehen in
+den USA; für die Datenschutzerklärung heißt das: Auftragsverarbeitung mit
+Drittlandtransfer auf Grundlage der Standardvertragsklauseln, der
+Auftragsverarbeitungsvertrag liegt unter web3forms.com/dpa.
 
 ## Noch offen
 
