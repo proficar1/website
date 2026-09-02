@@ -100,8 +100,8 @@ de:
     or: oder
     via_whatsapp: Stattdessen per WhatsApp senden
     note: >-
-      Prototyp-Hinweis: Das Formular ist noch nicht mit einem Postfach verbunden.
-      Der WhatsApp-Weg funktioniert bereits.
+      Ihre Anfrage geht direkt an unseren Sales Manager. Lieber sofort
+      sprechen? Der WhatsApp-Weg steht daneben bereit.
     success: Danke! Ihre Anfrage ist unterwegs. Wir melden uns zeitnah.
     error: Das hat leider nicht geklappt. Bitte per WhatsApp oder E-Mail versuchen.
   footer:
@@ -116,7 +116,6 @@ de:
     tax_code_label: Steuernummer
     rea_label: Firmenregister-Nr. REA
     rights: Alle Rechte vorbehalten.
-    proto: Prototyp – Inhalte und Preise unverbindlich.
   wa:
     default: "Hallo ProfiCar1, ich habe eine Frage zu Ihren Produkten."
     product: "Hallo ProfiCar1, ich interessiere mich für"
@@ -221,8 +220,8 @@ it:
     or: oppure
     via_whatsapp: Invia invece su WhatsApp
     note: >-
-      Nota prototipo: il modulo non è ancora collegato a una casella di posta. Il
-      canale WhatsApp funziona già.
+      La vostra richiesta arriva direttamente al nostro Sales Manager.
+      Preferite parlarne subito? Accanto trovate il canale WhatsApp.
     success: Grazie! La richiesta è partita. Vi risponderemo a breve.
     error: Qualcosa è andato storto. Provate via WhatsApp o e-mail.
   footer:
@@ -237,7 +236,6 @@ it:
     tax_code_label: Codice fiscale
     rea_label: N. REA
     rights: Tutti i diritti riservati.
-    proto: Prototipo – contenuti e prezzi non vincolanti.
   wa:
     default: "Buongiorno ProfiCar1, ho una domanda sui vostri prodotti."
     product: "Buongiorno ProfiCar1, sono interessato a"

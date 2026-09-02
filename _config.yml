@@ -56,12 +56,13 @@ contacts:
 whatsapp: "393514061616"
 
 # Kontaktformular: Web3Forms (https://web3forms.com).
-# Der Access Key ist keine geheime Angabe – er steht in jeder Web3Forms-Seite
-# offen im Quelltext und taugt nur zum Zustellen an genau ein Postfach.
-# Den Key kostenlos auf web3forms.com mit der Zieladresse anfordern; solange
-# hier der Platzhalter steht, leitet das Formular auf WhatsApp um.
-# Zieladresse: martin.topautotruck@outlook.com (Martin Lazov)
-web3forms_key: "ACCESS-KEY-EINTRAGEN"
+# Der Access Key ist keine geheime Angabe – er steht laut Anbieter bewusst
+# offen im Quelltext jeder Seite und taugt allein zum Zustellen an genau ein
+# Postfach, nicht zum Auslesen früherer Anfragen oder zum Kontozugang.
+# Zieladresse: martin.topautotruck@outlook.com (Martin Lazov).
+# Empfänger im Web3Forms-Dashboard änderbar, ohne die Seite anzufassen.
+# Steht hier ein Platzhalter, leitet das Formular auf WhatsApp um.
+web3forms_key: "91bce378-409e-4a89-a971-809eb217be04"
 
 collections:
   products:
