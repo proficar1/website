@@ -13,3 +13,6 @@ Thumbs.db
 
 # Interner Standalone-Entwurf (2 MB, durch die Jekyll-Site ersetzt)
 ProfiCar1-Entwurf.html
+
+# Im Pages-Build erzeugte Zusatzkonfiguration
+_config_pages.yml
