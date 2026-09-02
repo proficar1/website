@@ -19,6 +19,16 @@ Zweisprachige (DE/IT) Website für **ProfiCar1**, gebaut mit
   fertige WhatsApp-Nachricht)
 - **Logo** als SVG: `assets/img/logo/proficar1.svg` (Lockup),
   `proficar1-mark.svg` (nur Bildmarke), `favicon.svg`
+- **Automatische Sprachwahl.** Deutsch ist der Standard. Wer Italienisch als
+  bevorzugte Browsersprache führt, wird von den deutschen Seiten auf die
+  italienische Entsprechung umgeleitet (`/produkte/` → `/it/prodotti/`, Anker
+  und Query bleiben erhalten). Jede andere Sprache landet auf Deutsch.
+  Der DE/IT-Umschalter in der Navigation hat immer Vorrang: die Wahl wird im
+  Browser gespeichert (`pc1-lang`) und die Weiche greift danach nicht mehr
+  gegen sie. Ausgewertet wird nur die *erstgenannte* Browsersprache — wer
+  de-DE vor it-IT führt, wie in Südtirol üblich, bleibt auf Deutsch.
+  Die Logik steht in `_layouts/base.html` im `<head>` und läuft vor dem ersten
+  Rendern, damit nichts aufblitzt.
 - **Helles und dunkles Farbschema.** Die Seite startet dunkel; über das
   Sonne-/Mond-Symbol in der Navigation lässt sich auf hell umschalten, die Wahl
   bleibt im Browser gespeichert.

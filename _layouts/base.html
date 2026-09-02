@@ -1,6 +1,19 @@
 <!doctype html>
 {% assign lang = page.lang | default: "de" %}
 {% assign t = site.data.i18n[lang] %}
+{% comment %}
+  Gegenstück jeder Seite in der jeweils anderen Sprache. Eine Stelle,
+  damit hreflang-Angaben und Sprachweiche nicht auseinanderlaufen.
+{% endcomment %}
+{% case page.url %}
+  {% when '/' %}{% assign url_de = '/' %}{% assign url_it = '/it/' %}
+  {% when '/produkte/' %}{% assign url_de = '/produkte/' %}{% assign url_it = '/it/prodotti/' %}
+  {% when '/kontakt/' %}{% assign url_de = '/kontakt/' %}{% assign url_it = '/it/contatti/' %}
+  {% when '/it/' %}{% assign url_de = '/' %}{% assign url_it = '/it/' %}
+  {% when '/it/prodotti/' %}{% assign url_de = '/produkte/' %}{% assign url_it = '/it/prodotti/' %}
+  {% when '/it/contatti/' %}{% assign url_de = '/kontakt/' %}{% assign url_it = '/it/contatti/' %}
+  {% else %}{% assign url_de = '/' %}{% assign url_it = '/it/' %}
+{% endcase %}
 <html lang="{{ lang }}">
 <head>
   <meta charset="utf-8">
@@ -9,12 +22,34 @@
   <title>{% if page.title %}{{ page.title }} · {% endif %}ProfiCar1{% unless page.title %} · {{ tagline }}{% endunless %}</title>
   <meta name="description" content="{% if lang == 'it' %}{{ site.description_it }}{% else %}{{ site.description_de }}{% endif %}">
   <link rel="icon" href="{{ '/assets/img/logo/favicon.svg' | relative_url }}" type="image/svg+xml">
-  <link rel="alternate" hreflang="de" href="{{ '/' | absolute_url }}">
-  <link rel="alternate" hreflang="it" href="{{ '/it/' | absolute_url }}">
+  <link rel="alternate" hreflang="de" href="{{ url_de | absolute_url }}">
+  <link rel="alternate" hreflang="it" href="{{ url_it | absolute_url }}">
+  <link rel="alternate" hreflang="x-default" href="{{ url_de | absolute_url }}">
   <meta property="og:type" content="website">
   <meta property="og:title" content="ProfiCar1">
   <meta property="og:description" content="{% if lang == 'it' %}{{ site.description_it }}{% else %}{{ site.description_de }}{% endif %}">
   <meta property="og:locale" content="{{ lang }}">
+{% if lang == 'de' %}
+  <script>
+    /* Sprachweiche. Deutsch ist der Standard: umgeleitet wird nur, wer
+       Italienisch als bevorzugte Browsersprache führt oder den Umschalter
+       schon einmal auf IT gestellt hat. Läuft vor dem ersten Rendern. */
+    (function () {
+      var choice = null;
+      try { choice = localStorage.getItem('pc1-lang'); } catch (e) {}
+      if (choice === 'de') return;            // von Hand auf Deutsch gestellt
+      if (choice !== 'it') {
+        var pref = (navigator.languages && navigator.languages[0]) ||
+                   navigator.language || '';
+        /* Nur die erstgenannte Sprache zählt. Wer de-DE vor it-IT führt –
+           in Südtirol der Regelfall – bleibt damit auf Deutsch. */
+        if (!/^it($|[-_])/i.test(pref)) return;
+      }
+      location.replace({{ url_it | relative_url | jsonify }} +
+                       location.search + location.hash);
+    })();
+  </script>
+{% endif %}
   <script>
     /* Vor dem ersten Rendern die gespeicherte Wahl anwenden. */
     (function () {

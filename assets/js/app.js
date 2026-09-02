@@ -29,6 +29,16 @@
     });
   }
 
+  /* ── Sprachwahl merken ─────────────────────────────────────────────── */
+  // Wer den Umschalter benutzt, hat sich entschieden: ab dann greift die
+  // automatische Sprachweiche im <head> nicht mehr gegen diese Wahl.
+  Array.prototype.slice.call(document.querySelectorAll('.lang-switch'))
+    .forEach(function (link) {
+      link.addEventListener('click', function () {
+        try { localStorage.setItem('pc1-lang', link.getAttribute('hreflang')); } catch (e) {}
+      });
+    });
+
   /* ── Mobile-Navigation ──────────────────────────────────────────────── */
   var burger = document.getElementById('burger');
   var mobileNav = document.getElementById('mobileNav');
