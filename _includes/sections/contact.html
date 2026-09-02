@@ -112,7 +112,7 @@
           berechtigtes Interesse, deshalb genügt der Hinweis mit Verweis.
         {% endcomment %}
         {% capture privacy_link %}<a href="{{ privacy | relative_url }}">{{ t.form.privacy_link }}</a>{% endcapture %}
-        <p class="small muted">{{ t.form.privacy_note | replace: '{link}', privacy_link }}</p>
+        <p class="small muted">{{ t.form.privacy_note | replace: '%link%', privacy_link }}</p>
 
         {% comment %} Köderfeld gegen Bots – Web3Forms verwirft alles, was hier ankommt. {% endcomment %}
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">

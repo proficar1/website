@@ -93,7 +93,7 @@ de:
     message_ph: Worum geht es? Gerne mit Artikelnummer.
     privacy_note: >-
       Mit dem Absenden verarbeiten wir Ihre Angaben, um Ihre Anfrage zu
-      beantworten. Näheres dazu in der {link}.
+      beantworten. Näheres dazu in der %link%.
     privacy_link: Datenschutzerklärung
     subject: "Neue Anfrage über die ProfiCar1-Website"
     submit: Anfrage senden
@@ -214,7 +214,7 @@ it:
     message_ph: Di cosa si tratta? Indicate pure il codice articolo.
     privacy_note: >-
       Inviando il modulo trattiamo i vostri dati per rispondere alla vostra
-      richiesta. Maggiori informazioni nell'{link}.
+      richiesta. Maggiori informazioni nell'%link%.
     privacy_link: informativa sulla privacy
     subject: "Nuova richiesta dal sito ProfiCar1"
     submit: Invia richiesta
