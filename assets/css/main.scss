@@ -397,15 +397,38 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 .marquee-track {
   display: flex; gap: 1.25rem; width: max-content;
   animation: marquee 46s linear infinite;
+}
+
+/* Beim Zeigen anhalten, damit sich das Produkt treffen lässt. :focus-within
+   deckt denselben Fall für die Tastatur ab. */
+.hero-marquee:hover .marquee-track,
+.hero-marquee:focus-within .marquee-track { animation-play-state: paused; }
+
+.marquee-item {
+  display: block; flex: none;
+  border-radius: var(--r);
+  transition: transform .25s var(--ease), box-shadow .25s var(--ease);
+
   img {
     width: 168px; height: 168px; object-fit: contain;
     background: #fff; border: 1px solid var(--line); border-radius: var(--r);
     padding: .75rem;
     filter: saturate(1.05);
+    transition: border-color .25s var(--ease);
+  }
+
+  &:hover, &:focus-visible {
+    transform: translateY(-6px);
+    box-shadow: var(--shadow);
+    img { border-color: var(--accent); }
   }
 }
+
 @keyframes marquee { to { transform: translateX(-50%); } }
-@media (prefers-reduced-motion: reduce) { .marquee-track { animation: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+  .marquee-item { transition: none; &:hover, &:focus-visible { transform: none; } }
+}
 
 /* ── Page-Head (Unterseiten) ───────────────────────────────────────────── */
 .page-head {
@@ -570,6 +593,9 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 
 /* ── Modal ─────────────────────────────────────────────────────────────── */
 .modal {
+  /* inset + margin:auto zentriert unabhängig davon, was das Browser-
+     Stylesheet für <dialog> vorgibt – waagerecht wie senkrecht. */
+  inset: 0; margin: auto;
   width: #{"min(920px, calc(100vw - 2rem))"};
   max-height: #{"min(90vh, 800px)"};
   padding: 0; border: 1px solid var(--line-strong); border-radius: var(--r-xl);
@@ -581,6 +607,9 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
   &[open] { animation: pop .28s var(--ease); }
 }
 @keyframes pop { from { opacity: 0; transform: translateY(14px) scale(.97); } }
+
+/* Solange der Dialog offen ist, soll die Seite dahinter nicht wegrutschen. */
+body.has-modal { overflow: hidden; }
 
 .modal-inner { display: grid; grid-template-columns: 300px 1fr; max-height: #{"min(90vh, 800px)"}; }
 .modal-media { background: #fff; display: grid; place-items: center; padding: 1.5rem; }

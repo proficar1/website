@@ -126,11 +126,14 @@
       modalText.innerHTML = detail.innerHTML;
       modalImg.src = img.getAttribute('src');
       modalImg.alt = img.getAttribute('alt');
+      // Bei erneutem Öffnen sonst noch die Scroll-Position des vorigen Produkts.
+      modalText.scrollTop = 0;
       if (typeof modal.showModal === 'function') {
         modal.showModal();
       } else {
         modal.setAttribute('open', '');
       }
+      body.classList.add('has-modal');
     }
 
     grid.addEventListener('click', function (e) {
@@ -145,6 +148,10 @@
         // Klick auf den Backdrop schließt den Dialog
         if (e.target === modal) modal.close();
       });
+      // Ein Punkt für alle Wege hinaus: Button, Backdrop und Escape.
+      modal.addEventListener('close', function () {
+        body.classList.remove('has-modal');
+      });
     }
 
     // Direktlink auf ein Produkt (#t1163) hervorheben und Detail öffnen
@@ -155,6 +162,9 @@
         target.classList.add('is-target');
         requestAnimationFrame(function () {
           target.scrollIntoView({ block: 'center', behavior: 'auto' });
+          // Wer über einen Produktlink kommt – etwa aus dem Band auf der
+          // Startseite – erwartet die Detailansicht, nicht nur die Karte.
+          openCard(target);
         });
       }
     }

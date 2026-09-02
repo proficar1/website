@@ -35,11 +35,19 @@
     </dl>
   </div>
 
-  <div class="hero-marquee" aria-hidden="true">
+  {% comment %}
+    Das Band läuft doppelt, damit der Umlauf nahtlos ist. Nur der erste
+    Durchgang ist für Screenreader und Tastatur da – die Kopie wäre sonst
+    eine wortgleiche zweite Linkliste.
+  {% endcomment %}
+  <div class="hero-marquee">
     <div class="marquee-track">
       {% for i in (1..2) %}
       {% for p in site.products %}{% if p.featured %}
-      <img src="{{ '/assets/img/products/' | append: p.img | append: '.jpg' | relative_url }}" alt="" loading="lazy">
+      <a class="marquee-item" href="{{ prods | relative_url }}#{{ p.ref }}"
+         {% if i == 1 %}aria-label="{{ p[lang].name }}"{% else %}aria-hidden="true" tabindex="-1"{% endif %}>
+        <img src="{{ '/assets/img/products/' | append: p.img | append: '.jpg' | relative_url }}" alt="" loading="lazy">
+      </a>
       {% endif %}{% endfor %}
       {% endfor %}
     </div>
