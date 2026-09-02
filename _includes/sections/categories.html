@@ -1,0 +1,27 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% if lang == 'it' %}{% assign prods = '/it/prodotti/' %}{% else %}{% assign prods = '/produkte/' %}{% endif %}
+
+<section class="section" id="categories">
+  <div class="wrap">
+    <header class="section-head">
+      <p class="eyebrow">{{ t.sections.categories_eyebrow }}</p>
+      <h2>{{ t.sections.categories_title }}</h2>
+      <p class="lead">{{ t.sections.categories_lead }}</p>
+    </header>
+
+    <div class="cat-grid">
+      {% for cat in site.data.categories %}
+      {% assign n = 0 %}
+      {% for p in site.products %}{% if p.cat == cat.id %}{% assign n = n | plus: 1 %}{% endif %}{% endfor %}
+      <a class="cat-card" href="{{ prods | relative_url }}#{{ cat.id }}">
+        <span class="cat-icon">{% include icon-cat.html icon=cat.icon %}</span>
+        <h3>{{ cat[lang].name }}</h3>
+        <p class="cat-claim">{{ cat[lang].claim }}</p>
+        <p class="cat-text muted">{{ cat[lang].text }}</p>
+        <span class="cat-count">{{ n }} {% if n == 1 %}{{ t.products.count_one }}{% else %}{{ t.products.count_many }}{% endif %}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</section>

@@ -1,0 +1,15 @@
+# Jekyll-Build
+_site/
+.jekyll-cache/
+.jekyll-metadata
+.sass-cache/
+vendor/
+Gemfile.lock
+
+# Betriebssystem
+.DS_Store
+._*
+Thumbs.db
+
+# Interner Standalone-Entwurf (2 MB, durch die Jekyll-Site ersetzt)
+ProfiCar1-Entwurf.html

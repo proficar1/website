@@ -1,0 +1,55 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% if lang == 'it' %}
+  {% assign home = '/it/' %}
+  {% assign prods = '/it/prodotti/' %}
+  {% assign contact = '/it/contatti/' %}
+  {% assign switch = '/' %}
+{% else %}
+  {% assign home = '/' %}
+  {% assign prods = '/produkte/' %}
+  {% assign contact = '/kontakt/' %}
+  {% assign switch = '/it/' %}
+{% endif %}
+
+<header class="site-header" id="siteHeader">
+  <div class="wrap header-inner">
+    <a class="brand" href="{{ home | relative_url }}" aria-label="ProfiCar1">
+      {% include logo.html class="logo--nav" %}
+    </a>
+
+    <nav class="nav-desktop" aria-label="{{ t.nav.home }}">
+      <a href="{{ home | relative_url }}">{{ t.nav.home }}</a>
+      <a href="{{ prods | relative_url }}">{{ t.nav.products }}</a>
+      <a href="{{ home | relative_url }}#about">{{ t.nav.about }}</a>
+      <a href="{{ contact | relative_url }}">{{ t.nav.contact }}</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="theme-toggle" type="button"
+              aria-label="{% if lang == 'it' %}Cambia tema chiaro/scuro{% else %}Helles oder dunkles Design{% endif %}">
+        {% include icon-theme.html %}
+      </button>
+      <a class="lang-switch" href="{{ switch | relative_url }}" hreflang="{% if lang == 'it' %}de{% else %}it{% endif %}">
+        <span class="lang-switch__cur">{{ lang | upcase }}</span>
+        <span class="lang-switch__alt">{% if lang == 'it' %}DE{% else %}IT{% endif %}</span>
+      </a>
+      <a class="btn btn--wa btn--sm hide-sm" href="https://wa.me/{{ site.whatsapp }}?text={{ t.wa.default | uri_escape }}" target="_blank" rel="noopener">
+        {% include icon-whatsapp.html %}<span>WhatsApp</span>
+      </a>
+      <button class="burger" id="burger" aria-label="Menu" aria-expanded="false" aria-controls="mobileNav">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </div>
+
+  <div class="mobile-nav" id="mobileNav" hidden>
+    <a href="{{ home | relative_url }}">{{ t.nav.home }}</a>
+    <a href="{{ prods | relative_url }}">{{ t.nav.products }}</a>
+    <a href="{{ home | relative_url }}#about">{{ t.nav.about }}</a>
+    <a href="{{ contact | relative_url }}">{{ t.nav.contact }}</a>
+    <a class="btn btn--wa" href="https://wa.me/{{ site.whatsapp }}?text={{ t.wa.default | uri_escape }}" target="_blank" rel="noopener">
+      {% include icon-whatsapp.html %}<span>WhatsApp</span>
+    </a>
+  </div>
+</header>

@@ -1,0 +1,229 @@
+de:
+  lang_name: Deutsch
+  other_lang: Italiano
+  nav:
+    home: Start
+    products: Produkte
+    about: Über uns
+    contact: Kontakt
+  cta:
+    whatsapp: Per WhatsApp anfragen
+    products: Produkte ansehen
+    contact: Kontakt aufnehmen
+    catalog: Katalog anfragen
+    call: Anrufen
+    mail: E-Mail schreiben
+  hero:
+    eyebrow: Verkauf · Verleih · Kundendienst
+    title_1: Profi-Ausrüstung für
+    title_2: Karosserie, Lack
+    title_3: und Aufbereitung
+    lead: >-
+      Über 60 aufeinander abgestimmte Produkte für Karosseriebau, Lackierung und
+      Fahrzeugaufbereitung – entwickelt für Werkstätten, die jeden Tag ein perfektes
+      Ergebnis abliefern müssen.
+    stat_1_v: "60+"
+    stat_1_l: Produkte im Sortiment
+    stat_2_v: "5"
+    stat_2_l: Produktbereiche
+    stat_3_v: "3"
+    stat_3_l: "Länder: IT · DE · AT"
+  sections:
+    categories_eyebrow: Sortiment
+    categories_title: Fünf Bereiche, ein System
+    categories_lead: >-
+      Von der Grundierung über Politur und Reinigung bis zur Maschine, die den Dampf
+      liefert – abgestimmt aufeinander statt zusammengekauft.
+    preview_eyebrow: Bestseller
+    preview_title: Häufig bestellt
+    products_eyebrow: Katalog
+    products_title: Alle Produkte
+    products_lead: >-
+      Suchen, filtern, antippen. Jede Karte zeigt Artikelnummer, Gebindegröße und
+      die vollständige Beschreibung.
+    about_eyebrow: Über uns
+    about_title: Zwei Generationen, ein Anspruch
+    contact_eyebrow: Kontakt
+    contact_title: Sprechen wir über Ihr Projekt
+    contact_lead: >-
+      Angebot, Muster oder Katalog – schreiben Sie uns hier oder direkt per
+      WhatsApp. Antwort in der Regel am selben Werktag.
+  about:
+    p1: >-
+      ProfiCar1 ist die Produktlinie von Topautotruck aus Naturns in Südtirol. Wir
+      liefern Werkstätten, Karosseriebauern und Aufbereitern genau das Material, das
+      sie im Alltag wirklich brauchen – von der Grundierung bis zum Mikrofasertuch,
+      ohne Sortimentsballast, dafür mit persönlicher Beratung in Deutsch und
+      Italienisch.
+    p2: >-
+      Neben dem Verkauf bieten wir Verleih von Geräten und Kundendienst. Sie
+      bekommen keinen Callcenter-Kontakt, sondern eine Handynummer, die abgehoben
+      wird.
+    usp_1_t: Aufeinander abgestimmt
+    usp_1_d: Füller, Lack, Klarlack, Härter und Politur aus einer Hand – die Systeme passen zusammen.
+    usp_2_t: Profi-Qualität
+    usp_2_d: Formuliert für den täglichen Werkstattbetrieb, nicht für den Baumarktregal-Vergleich.
+    usp_3_t: Persönliche Beratung
+    usp_3_d: Direkter Draht zum Inhaber und zum Sales Manager – zweisprachig DE / IT.
+    usp_4_t: Lieferung in DE, AT, IT
+    usp_4_d: Aus Südtirol heraus in den gesamten deutsch- und italienischsprachigen Raum.
+  products:
+    search: Produkt oder Artikelnummer suchen …
+    all: Alle
+    count_one: Produkt
+    count_many: Produkte
+    empty: Kein Produkt gefunden. Versuchen Sie einen anderen Suchbegriff.
+    code: Art.-Nr.
+    color: Farbton
+    size: Menge
+    ask: Zu diesem Produkt anfragen
+    close: Schließen
+    detail: Details
+  form:
+    name: Name
+    company: Firma
+    email: E-Mail
+    phone: Telefon
+    topic: Anliegen
+    topic_offer: Angebot anfragen
+    topic_catalog: Katalog zusenden
+    topic_sample: Muster bestellen
+    topic_other: Sonstiges
+    message: Nachricht
+    message_ph: Worum geht es? Gerne mit Artikelnummer.
+    privacy: >-
+      Ich bin damit einverstanden, dass meine Angaben zur Bearbeitung meiner Anfrage
+      gespeichert werden.
+    submit: Anfrage senden
+    or: oder
+    via_whatsapp: Stattdessen per WhatsApp senden
+    note: >-
+      Prototyp-Hinweis: Das Formular ist noch nicht mit einem Postfach verbunden.
+      Der WhatsApp-Weg funktioniert bereits.
+    success: Danke! Ihre Anfrage ist unterwegs. Wir melden uns zeitnah.
+    error: Das hat leider nicht geklappt. Bitte per WhatsApp oder E-Mail versuchen.
+  footer:
+    company: Unternehmen
+    contact: Kontakt
+    legal: Rechtliches
+    imprint: Impressum
+    privacy: Datenschutz
+    rights: Alle Rechte vorbehalten.
+    proto: Prototyp – Inhalte und Preise unverbindlich.
+  wa:
+    default: "Hallo ProfiCar1, ich habe eine Frage zu Ihren Produkten."
+    product: "Hallo ProfiCar1, ich interessiere mich für"
+
+it:
+  lang_name: Italiano
+  other_lang: Deutsch
+  nav:
+    home: Home
+    products: Prodotti
+    about: Chi siamo
+    contact: Contatti
+  cta:
+    whatsapp: Scrivici su WhatsApp
+    products: Scopri i prodotti
+    contact: Contattaci
+    catalog: Richiedi il catalogo
+    call: Chiama
+    mail: Scrivi una e-mail
+  hero:
+    eyebrow: Vendita · Noleggio · Assistenza
+    title_1: Forniture professionali per
+    title_2: carrozzeria, vernice
+    title_3: e detailing
+    lead: >-
+      Oltre 60 prodotti coordinati tra loro per carrozzeria, verniciatura e
+      preparazione del veicolo – sviluppati per officine che ogni giorno devono
+      consegnare un risultato perfetto.
+    stat_1_v: "60+"
+    stat_1_l: Prodotti a catalogo
+    stat_2_v: "5"
+    stat_2_l: Aree di prodotto
+    stat_3_v: "3"
+    stat_3_l: "Paesi: IT · DE · AT"
+  sections:
+    categories_eyebrow: Assortimento
+    categories_title: Cinque aree, un sistema
+    categories_lead: >-
+      Dal fondo alla lucidatura e alla pulizia, fino alla macchina che produce il
+      vapore – coordinati, non messi insieme a caso.
+    preview_eyebrow: Bestseller
+    preview_title: I più richiesti
+    products_eyebrow: Catalogo
+    products_title: Tutti i prodotti
+    products_lead: >-
+      Cerca, filtra, tocca. Ogni scheda mostra codice articolo, formato e la
+      descrizione completa.
+    about_eyebrow: Chi siamo
+    about_title: Due generazioni, un'unica esigenza
+    contact_eyebrow: Contatti
+    contact_title: Parliamo del vostro progetto
+    contact_lead: >-
+      Preventivo, campione o catalogo – scriveteci qui o direttamente su WhatsApp.
+      Di norma rispondiamo lo stesso giorno lavorativo.
+  about:
+    p1: >-
+      ProfiCar1 è la linea di prodotti di Topautotruck di Naturno, in Alto Adige.
+      Forniamo a officine, carrozzerie e detailer esattamente il materiale che serve
+      ogni giorno – dal fondo al panno in microfibra, senza assortimenti inutili, ma
+      con consulenza personale in italiano e tedesco.
+    p2: >-
+      Oltre alla vendita offriamo noleggio di attrezzature e assistenza. Non un
+      call center, ma un numero di cellulare a cui risponde una persona.
+    usp_1_t: Prodotti coordinati
+    usp_1_d: Fondo, vernice, trasparente, catalizzatore e paste da un unico fornitore – i cicli sono compatibili.
+    usp_2_t: Qualità professionale
+    usp_2_d: Formulati per il lavoro quotidiano in officina, non per lo scaffale del fai da te.
+    usp_3_t: Consulenza personale
+    usp_3_d: Contatto diretto con il titolare e il sales manager – bilingue IT / DE.
+    usp_4_t: Consegna in IT, DE, AT
+    usp_4_d: Dall'Alto Adige verso tutta l'area di lingua italiana e tedesca.
+  products:
+    search: Cerca prodotto o codice articolo …
+    all: Tutti
+    count_one: prodotto
+    count_many: prodotti
+    empty: Nessun prodotto trovato. Prova con un altro termine di ricerca.
+    code: Cod. art.
+    color: Colore
+    size: Quantità
+    ask: Richiedi informazioni
+    close: Chiudi
+    detail: Dettagli
+  form:
+    name: Nome
+    company: Azienda
+    email: E-mail
+    phone: Telefono
+    topic: Richiesta
+    topic_offer: Richiedi un preventivo
+    topic_catalog: Ricevi il catalogo
+    topic_sample: Ordina un campione
+    topic_other: Altro
+    message: Messaggio
+    message_ph: Di cosa si tratta? Indicate pure il codice articolo.
+    privacy: >-
+      Acconsento alla memorizzazione dei miei dati per l'elaborazione della
+      richiesta.
+    submit: Invia richiesta
+    or: oppure
+    via_whatsapp: Invia invece su WhatsApp
+    note: >-
+      Nota prototipo: il modulo non è ancora collegato a una casella di posta. Il
+      canale WhatsApp funziona già.
+    success: Grazie! La richiesta è partita. Vi risponderemo a breve.
+    error: Qualcosa è andato storto. Provate via WhatsApp o e-mail.
+  footer:
+    company: Azienda
+    contact: Contatti
+    legal: Note legali
+    imprint: Note legali
+    privacy: Privacy
+    rights: Tutti i diritti riservati.
+    proto: Prototipo – contenuti e prezzi non vincolanti.
+  wa:
+    default: "Buongiorno ProfiCar1, ho una domanda sui vostri prodotti."
+    product: "Buongiorno ProfiCar1, sono interessato a"

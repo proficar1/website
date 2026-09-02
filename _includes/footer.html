@@ -1,0 +1,65 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% if lang == 'it' %}
+  {% assign home = '/it/' %}
+  {% assign prods = '/it/prodotti/' %}
+  {% assign contact = '/it/contatti/' %}
+  {% assign country = site.company.country_it %}
+  {% assign city = site.company.city_it %}
+  {% assign street = site.company.street_it %}
+{% else %}
+  {% assign home = '/' %}
+  {% assign prods = '/produkte/' %}
+  {% assign contact = '/kontakt/' %}
+  {% assign country = site.company.country_de %}
+  {% assign city = site.company.city %}
+  {% assign street = site.company.street %}
+{% endif %}
+
+<footer class="site-footer">
+  <div class="wrap footer-grid">
+    <div class="footer-brand">
+      {% include logo.html class="logo--footer" %}
+      <p class="muted">{% if lang == 'it' %}{{ site.tagline_it }}{% else %}{{ site.tagline_de }}{% endif %}</p>
+    </div>
+
+    <div>
+      <h4>{{ t.footer.company }}</h4>
+      <p class="muted">
+        {{ site.company.legal }}<br>
+        {{ street }}<br>
+        {{ site.company.zip }} {{ city }} ({{ site.company.province }})<br>
+        {{ country }}
+      </p>
+    </div>
+
+    <div>
+      <h4>{{ t.footer.contact }}</h4>
+      <ul class="footer-list">
+        {% for c in site.contacts %}
+        <li>
+          <span class="footer-name">{{ c.name }}</span>
+          <span class="muted small">{% if lang == 'it' %}{{ c.role_it }}{% else %}{{ c.role_de }}{% endif %}</span>
+          <a href="tel:{{ c.phone | remove: ' ' }}">{{ c.phone }}</a>
+          <a href="mailto:{{ c.email }}">{{ c.email }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </div>
+
+    <div>
+      <h4>{{ t.nav.products }}</h4>
+      <ul class="footer-list footer-list--links">
+        {% for cat in site.data.categories %}
+        <li><a href="{{ prods | relative_url }}#{{ cat.id }}">{{ cat[lang].name }}</a></li>
+        {% endfor %}
+        <li><a href="{{ contact | relative_url }}">{{ t.cta.catalog }}</a></li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap footer-bottom">
+    <p class="muted small">© {{ 'now' | date: "%Y" }} ProfiCar1 · {{ site.company.legal }}. {{ t.footer.rights }}</p>
+    <p class="muted small">{{ t.footer.proto }}</p>
+  </div>
+</footer>

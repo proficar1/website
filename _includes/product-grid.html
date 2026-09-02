@@ -1,0 +1,83 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% assign wa = site.whatsapp %}
+
+<div class="filters" id="filters">
+  <div class="search">
+    {% include icon-search.html %}
+    <input type="search" id="productSearch" placeholder="{{ t.products.search }}" autocomplete="off"
+           aria-label="{{ t.products.search }}">
+  </div>
+  <div class="chips" role="tablist">
+    <button class="chip is-active" data-cat="all" role="tab" aria-selected="true">{{ t.products.all }}</button>
+    {% for cat in site.data.categories %}
+    <button class="chip" data-cat="{{ cat.id }}" role="tab" aria-selected="false">{{ cat[lang].short }}</button>
+    {% endfor %}
+  </div>
+  <p class="result-count muted small" id="resultCount"
+     data-one="{{ t.products.count_one }}" data-many="{{ t.products.count_many }}"></p>
+</div>
+
+<div class="product-grid" id="productGrid">
+  {% for p in site.products %}
+  {% assign loc = p[lang] %}
+  {% assign amount = p.amount %}
+  {% if lang == 'it' and p.amount_it %}{% assign amount = p.amount_it %}{% endif %}
+  {% if lang == 'it' %}{% assign color = p.color_it %}{% else %}{% assign color = p.color_de %}{% endif %}
+  <article class="card" id="{{ p.ref }}" data-id="{{ p.ref }}" data-cat="{{ p.cat }}"
+           data-search="{{ loc.name | append: ' ' | append: loc.sub | append: ' ' | append: p.code | downcase | strip }}">
+    <button class="card-open" type="button" aria-label="{{ loc.name }} – {{ t.products.detail }}">
+      <div class="card-media">
+        <img src="{{ '/assets/img/products/' | append: p.img | append: '.jpg' | relative_url }}"
+             alt="{{ loc.name }}" loading="lazy" width="700" height="700">
+        <span class="card-code">{{ p.code }}</span>
+      </div>
+      <div class="card-body">
+        <h3>{{ loc.name }}</h3>
+        <p class="card-sub">{{ loc.sub }}</p>
+        <ul class="card-meta">
+          {% if color %}<li>{{ color }}</li>{% endif %}
+          {% if amount %}<li>{{ amount }}</li>{% endif %}
+        </ul>
+      </div>
+    </button>
+
+    <div class="card-detail" hidden>
+      <div class="d-code">{{ t.products.code }} {{ p.code }}</div>
+      <h3 class="d-title">{{ loc.name }}</h3>
+      <p class="d-sub">{{ loc.sub }}</p>
+      <p class="d-desc">{{ loc.desc }}</p>
+      {% if p.ratings %}
+      <ul class="d-ratings">
+        {% for r in p.ratings %}
+        <li>
+          <span>{{ r[lang] }}</span>
+          <span class="bar"><i style="width: {{ r.v | times: 10 }}%"></i></span>
+          <b>{{ r.v }}/10</b>
+        </li>
+        {% endfor %}
+      </ul>
+      {% endif %}
+      <dl class="d-specs">
+        {% if color %}<div><dt>{{ t.products.color }}</dt><dd>{{ color }}</dd></div>{% endif %}
+        {% if amount %}<div><dt>{{ t.products.size }}</dt><dd>{{ amount }}</dd></div>{% endif %}
+      </dl>
+      <a class="btn btn--wa d-cta"
+         href="https://wa.me/{{ wa }}?text={{ t.wa.product | append: ' ' | append: loc.name | append: ' (' | append: p.code | append: ')' | uri_escape }}"
+         target="_blank" rel="noopener">
+        {% include icon-whatsapp.html %}<span>{{ t.products.ask }}</span>
+      </a>
+    </div>
+  </article>
+  {% endfor %}
+</div>
+
+<p class="empty-state" id="emptyState" hidden>{{ t.products.empty }}</p>
+
+<dialog class="modal" id="productModal">
+  <button class="modal-close" id="modalClose" aria-label="{{ t.products.close }}">&times;</button>
+  <div class="modal-inner">
+    <div class="modal-media"><img id="modalImg" src="" alt=""></div>
+    <div class="modal-text" id="modalText"></div>
+  </div>
+</dialog>

@@ -1,0 +1,38 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% if lang == 'it' %}{% assign prods = '/it/prodotti/' %}{% else %}{% assign prods = '/produkte/' %}{% endif %}
+
+<section class="section section--tight">
+  <div class="wrap">
+    <header class="section-head section-head--row">
+      <div>
+        <p class="eyebrow">{{ t.sections.preview_eyebrow }}</p>
+        <h2>{{ t.sections.preview_title }}</h2>
+      </div>
+      <a class="btn btn--ghost" href="{{ prods | relative_url }}">
+        {{ t.cta.products }}
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </header>
+
+    <div class="product-grid product-grid--preview">
+      {% for p in site.products %}{% if p.featured %}
+      {% assign loc = p[lang] %}
+      {% assign amount = p.amount %}
+      {% if lang == 'it' and p.amount_it %}{% assign amount = p.amount_it %}{% endif %}
+      <a class="card card--link" href="{{ prods | relative_url }}#{{ p.ref }}">
+        <div class="card-media">
+          <img src="{{ '/assets/img/products/' | append: p.img | append: '.jpg' | relative_url }}"
+               alt="{{ loc.name }}" loading="lazy" width="700" height="700">
+          <span class="card-code">{{ p.code }}</span>
+        </div>
+        <div class="card-body">
+          <h3>{{ loc.name }}</h3>
+          <p class="card-sub">{{ loc.sub }}</p>
+          {% if amount %}<ul class="card-meta"><li>{{ amount }}</li></ul>{% endif %}
+        </div>
+      </a>
+      {% endif %}{% endfor %}
+    </div>
+  </div>
+</section>

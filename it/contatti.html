@@ -1,0 +1,18 @@
+---
+layout: base
+lang: it
+title: Contatti
+permalink: /it/contatti/
+---
+{% assign t = site.data.i18n.it %}
+
+<section class="page-head">
+  <div class="hero-bg" aria-hidden="true"><span class="glow glow--red"></span><span class="glow glow--cyan"></span></div>
+  <div class="wrap">
+    <p class="eyebrow">{{ t.sections.contact_eyebrow }}</p>
+    <h1>{{ t.sections.contact_title }}</h1>
+    <p class="lead">{{ t.sections.contact_lead }}</p>
+  </div>
+</section>
+
+{% include sections/contact.html t=t lang="it" compact=true %}

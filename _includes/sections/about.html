@@ -1,0 +1,32 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+
+<section class="section section--alt" id="about">
+  <div class="wrap about-grid">
+    <div class="about-text">
+      <p class="eyebrow">{{ t.sections.about_eyebrow }}</p>
+      <h2>{{ t.sections.about_title }}</h2>
+      <p class="lead">{{ t.about.p1 }}</p>
+      <p class="muted">{{ t.about.p2 }}</p>
+    </div>
+
+    <ul class="usp-list">
+      <li>
+        <b>{{ t.about.usp_1_t }}</b>
+        <span class="muted">{{ t.about.usp_1_d }}</span>
+      </li>
+      <li>
+        <b>{{ t.about.usp_2_t }}</b>
+        <span class="muted">{{ t.about.usp_2_d }}</span>
+      </li>
+      <li>
+        <b>{{ t.about.usp_3_t }}</b>
+        <span class="muted">{{ t.about.usp_3_d }}</span>
+      </li>
+      <li>
+        <b>{{ t.about.usp_4_t }}</b>
+        <span class="muted">{{ t.about.usp_4_d }}</span>
+      </li>
+    </ul>
+  </div>
+</section>

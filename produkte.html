@@ -1,0 +1,24 @@
+---
+layout: base
+lang: de
+title: Produkte
+permalink: /produkte/
+---
+{% assign t = site.data.i18n.de %}
+
+<section class="page-head">
+  <div class="hero-bg" aria-hidden="true"><span class="glow glow--red"></span><span class="glow glow--cyan"></span></div>
+  <div class="wrap">
+    <p class="eyebrow">{{ t.sections.products_eyebrow }}</p>
+    <h1>{{ t.sections.products_title }}</h1>
+    <p class="lead">{{ t.sections.products_lead }}</p>
+  </div>
+</section>
+
+<section class="section section--tight">
+  <div class="wrap">
+    {% include product-grid.html t=t lang="de" %}
+  </div>
+</section>
+
+{% include sections/contact.html t=t lang="de" %}

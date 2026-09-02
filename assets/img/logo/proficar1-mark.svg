@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 140" width="640" height="140" role="img" aria-label="ProfiCar1">
+  <title>ProfiCar1</title>
+  <path fill="#5AB8E1" d="M300 34 Q430 -14 562 40 Q430 12 300 34 Z"/>
+  <path fill="none" stroke="#C62D34" stroke-width="13" stroke-linecap="round" d="M52 106 C130 106 170 102 214 74 C270 38 352 26 422 40 C488 54 542 80 594 104"/>
+  <path fill="none" stroke="#C62D34" stroke-width="10" stroke-linecap="round" d="M92 122 C156 130 214 126 270 110"/>
+</svg>

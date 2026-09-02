@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <rect width="64" height="64" rx="14" fill="#0B0E13"/>
+  <svg x="6" y="13" width="52" height="12" viewBox="0 0 640 140" preserveAspectRatio="xMidYMid meet">
+    <path fill="#5AB8E1" d="M300 34 Q430 -14 562 40 Q430 12 300 34 Z"/>
+    <path fill="none" stroke="#E4323F" stroke-width="15" stroke-linecap="round" d="M52 106 C130 106 170 102 214 74 C270 38 352 26 422 40 C488 54 542 80 594 104"/>
+    <path fill="none" stroke="#E4323F" stroke-width="12" stroke-linecap="round" d="M92 122 C156 130 214 126 270 110"/>
+  </svg>
+  <text x="32" y="50" text-anchor="middle" font-family="Helvetica Neue, Helvetica, Arial, sans-serif"
+        font-size="20" font-weight="700" font-style="italic" fill="#ffffff">PC1</text>
+</svg>

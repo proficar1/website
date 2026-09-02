@@ -1,0 +1,108 @@
+{% assign t = include.t %}
+{% assign lang = include.lang %}
+{% if lang == 'it' %}
+  {% assign country = site.company.country_it %}
+  {% assign city = site.company.city_it %}
+  {% assign street = site.company.street_it %}
+{% else %}
+  {% assign country = site.company.country_de %}
+  {% assign city = site.company.city %}
+  {% assign street = site.company.street %}
+{% endif %}
+
+<section class="section" id="contact">
+  <div class="wrap contact-grid">
+
+    <div class="contact-intro">
+      {% unless include.compact %}
+      <p class="eyebrow">{{ t.sections.contact_eyebrow }}</p>
+      <h2>{{ t.sections.contact_title }}</h2>
+      <p class="lead">{{ t.sections.contact_lead }}</p>
+      {% endunless %}
+
+      <div class="contact-cards">
+        {% for c in site.contacts %}
+        <div class="contact-card">
+          <div class="contact-card__head">
+            <b>{{ c.name }}</b>
+            <span class="muted small">{% if lang == 'it' %}{{ c.role_it }}{% else %}{{ c.role_de }}{% endif %}</span>
+          </div>
+          <div class="contact-card__actions">
+            <a class="btn btn--wa btn--sm" href="https://wa.me/{{ c.phone_raw }}?text={{ t.wa.default | uri_escape }}" target="_blank" rel="noopener">
+              {% include icon-whatsapp.html %}<span>WhatsApp</span>
+            </a>
+            <a class="btn btn--ghost btn--sm" href="tel:{{ c.phone | remove: ' ' }}">{{ c.phone }}</a>
+          </div>
+          <a class="contact-mail" href="mailto:{{ c.email }}">{{ c.email }}</a>
+        </div>
+        {% endfor %}
+      </div>
+
+      <address class="contact-address muted">
+        <b>{{ site.company.legal }}</b><br>
+        {{ street }}<br>
+        {{ site.company.zip }} {{ city }} ({{ site.company.province }}) · {{ country }}
+      </address>
+    </div>
+
+    <div class="contact-form-wrap">
+      <form class="contact-form" id="contactForm" action="{{ site.formspree }}" method="post" novalidate>
+        <div class="field-row">
+          <label class="field">
+            <span>{{ t.form.name }} *</span>
+            <input type="text" name="name" id="f-name" required autocomplete="name">
+          </label>
+          <label class="field">
+            <span>{{ t.form.company }}</span>
+            <input type="text" name="company" id="f-company" autocomplete="organization">
+          </label>
+        </div>
+
+        <div class="field-row">
+          <label class="field">
+            <span>{{ t.form.email }} *</span>
+            <input type="email" name="email" id="f-email" required autocomplete="email">
+          </label>
+          <label class="field">
+            <span>{{ t.form.phone }}</span>
+            <input type="tel" name="phone" id="f-phone" autocomplete="tel">
+          </label>
+        </div>
+
+        <label class="field">
+          <span>{{ t.form.topic }}</span>
+          <select name="topic" id="f-topic">
+            <option>{{ t.form.topic_offer }}</option>
+            <option>{{ t.form.topic_catalog }}</option>
+            <option>{{ t.form.topic_sample }}</option>
+            <option>{{ t.form.topic_other }}</option>
+          </select>
+        </label>
+
+        <label class="field">
+          <span>{{ t.form.message }} *</span>
+          <textarea name="message" id="f-message" rows="5" required placeholder="{{ t.form.message_ph }}"></textarea>
+        </label>
+
+        <label class="check">
+          <input type="checkbox" name="privacy" required>
+          <span class="small muted">{{ t.form.privacy }}</span>
+        </label>
+
+        <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">
+
+        <div class="form-actions">
+          <button class="btn btn--primary" type="submit">{{ t.form.submit }}</button>
+          <span class="muted small">{{ t.form.or }}</span>
+          <button class="btn btn--wa" type="button" id="waSend">
+            {% include icon-whatsapp.html %}<span>{{ t.form.via_whatsapp }}</span>
+          </button>
+        </div>
+
+        <p class="form-note small muted">{{ t.form.note }}</p>
+        <p class="form-status" id="formStatus" role="status"
+           data-success="{{ t.form.success }}" data-error="{{ t.form.error }}"></p>
+      </form>
+    </div>
+  </div>
+</section>

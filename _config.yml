@@ -1,0 +1,61 @@
+title: ProfiCar1
+tagline_de: Profi-Ausrüstung für Karosserie, Lack und Fahrzeugaufbereitung
+tagline_it: Forniture professionali per carrozzeria, vernice e detailing
+description_de: >-
+  ProfiCar1 – professionelle Produkte für Karosserie, Lackierung, Politur und
+  Fahrzeugaufbereitung. Verkauf, Verleih und Kundendienst aus Südtirol.
+description_it: >-
+  ProfiCar1 – prodotti professionali per carrozzeria, verniciatura, lucidatura e
+  detailing. Vendita, noleggio e assistenza dall'Alto Adige.
+
+url: https://proficar1.com
+baseurl: ""
+
+company:
+  legal: Topautotruck des Lazov Ljubisa
+  street: St. Ursula Straße 1
+  street_it: Via Sant'Orsola 1
+  zip: "39025"
+  city: Naturns
+  city_it: Naturno
+  province: BZ
+  country_de: Italien
+  country_it: Italia
+  email: topautotruck@hotmail.com
+
+contacts:
+  - name: Ljubisa Lazov
+    role_de: Inhaber
+    role_it: Titolare
+    phone: "+39 388 792 6394"
+    phone_raw: "393887926394"
+    email: topautotruck@hotmail.com
+    whatsapp: true
+  - name: Martin Lazov
+    role_de: Sales Manager
+    role_it: Sales Manager
+    phone: "+39 351 406 1616"
+    phone_raw: "393514061616"
+    email: martin.topautotruck@outlook.com
+    whatsapp: true
+
+# Haupt-WhatsApp-Kontakt für Buttons und Formular-Fallback
+whatsapp: "393514061616"
+
+# Formspree-Endpunkt – im Prototyp ein Platzhalter.
+# Unter https://formspree.io ein Formular anlegen und die ID hier eintragen.
+formspree: "https://formspree.io/f/DEINE-FORM-ID"
+
+collections:
+  products:
+    output: false          # erzeugt keine eigenen Seiten, nur Daten
+
+sass:
+  style: compressed
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+  - ProfiCar1-Entwurf.html

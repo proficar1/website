@@ -1,0 +1,90 @@
+- id: karosserie
+  icon: spray
+  de:
+    name: Karosserie & Lack
+    short: Karosserie
+    claim: Grundierung, Lack, Unterboden- und Hohlraumschutz
+    text: >-
+      Vom Rostumwandler über Spritzspachtel und Strukturlack bis zum 2K-Klarlack:
+      der komplette Aufbau für Reparatur und Neulackierung – schnelltrocknend,
+      überlackierbar und UV-beständig.
+  it:
+    name: Carrozzeria & vernice
+    short: Carrozzeria
+    claim: Fondi, vernici, protettivi sottoscocca e per cavità
+    text: >-
+      Dal convertitore di ruggine al primer, dallo spray strutturato al
+      trasparente 2K: il ciclo completo per riparazione e riverniciatura –
+      asciugatura rapida, verniciabile e resistente ai raggi UV.
+
+- id: detailing
+  icon: polish
+  de:
+    name: Politur & Kosmetik
+    short: Detailing
+    claim: Polituren, Wachse, Thermopads und Mikrofaser
+    text: >-
+      Cut, Glanz und Schutz aufeinander abgestimmt: Polituren für jede
+      Aufbereitungsstufe, Carnauba-Wachs, Thermopads mit konischem Lochdesign und
+      Mikrofasertücher bis 1.400 GSM.
+  it:
+    name: Lucidatura & detailing
+    short: Detailing
+    claim: Paste, cere, thermopad e microfibre
+    text: >-
+      Abrasività, lucentezza e protezione in equilibrio: paste per ogni fase di
+      lavorazione, cera carnauba, thermopad con fori conici e panni in microfibra
+      fino a 1.400 GSM.
+
+- id: reinigung
+  icon: drop
+  de:
+    name: Reinigung & Pflege
+    short: Reinigung
+    claim: Shampoos, Entfetter, Innenraum- und Kunststoffpflege
+    text: >-
+      Vom selbstglänzenden Shampoo-Konzentrat über superkonzentrierte Entfetter
+      bis zur silikonfreien Lederpflege – für Fahrzeug, Werkstatt und Innenraum.
+  it:
+    name: Pulizia & cura
+    short: Pulizia
+    claim: Shampoo, sgrassanti, cura interni e plastiche
+    text: >-
+      Dallo shampoo autolucidante concentrato agli sgrassanti superconcentrati
+      fino al trattamento pelle senza silicone – per veicolo, officina e interni.
+
+- id: werkstatt
+  icon: tool
+  de:
+    name: Werkstatt & Zubehör
+    short: Werkstatt
+    claim: Bremsenreiniger, Rostlöser, Schmierstoffe
+    text: >-
+      Verbrauchsmaterial für den Alltag in Werkstatt und Karosseriebau –
+      rückstandsfrei verdunstend, kriechfähig und hitzebeständig bis 1.600 °C.
+  it:
+    name: Officina & accessori
+    short: Officina
+    claim: Pulitori freni, sbloccanti, lubrificanti
+    text: >-
+      Materiale di consumo per il lavoro quotidiano in officina e carrozzeria –
+      evapora senza residui, ad alta penetrazione e resistente fino a 1.600 °C.
+
+- id: maschinen
+  icon: machine
+  de:
+    name: Reinigungsmaschinen
+    short: Maschinen
+    claim: Dampfreiniger in vier Baugrößen
+    text: >-
+      Reinigen mit heißem Dampf statt mit Chemie: löst Schmutz, nimmt Gerüche und Bakterien
+      und eignet sich für Polster, Teppiche und empfindliche Oberflächen. Verkauf, Verleih
+      und Kundendienst aus einer Hand.
+  it:
+    name: Macchine per la pulizia
+    short: Macchine
+    claim: Pulitori a vapore in quattro misure
+    text: >-
+      Pulire con vapore caldo invece che con la chimica: scioglie lo sporco, elimina odori e
+      batteri ed è adatto a imbottiti, tappeti e superfici delicate. Vendita, noleggio e
+      assistenza da un unico fornitore.
