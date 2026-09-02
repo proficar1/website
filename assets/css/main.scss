@@ -325,6 +325,9 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 
 @media (max-width: 900px) {
   .nav-desktop { display: none; }
+  /* Die ausgeblendete Desktop-Navigation schiebt die Aktionen nicht mehr
+     nach rechts – das muss hier der automatische Rand wieder tun. */
+  .nav-desktop + .header-actions { margin-left: auto; }
   .burger { display: flex; }
   .hide-sm { display: none; }
   .mobile-nav[open], .mobile-nav.is-open { display: flex; }
