@@ -12,6 +12,10 @@
   {% when '/it/' %}{% assign url_de = '/' %}{% assign url_it = '/it/' %}
   {% when '/it/prodotti/' %}{% assign url_de = '/produkte/' %}{% assign url_it = '/it/prodotti/' %}
   {% when '/it/contatti/' %}{% assign url_de = '/kontakt/' %}{% assign url_it = '/it/contatti/' %}
+  {% when '/impressum/' %}{% assign url_de = '/impressum/' %}{% assign url_it = '/it/note-legali/' %}
+  {% when '/it/note-legali/' %}{% assign url_de = '/impressum/' %}{% assign url_it = '/it/note-legali/' %}
+  {% when '/datenschutz/' %}{% assign url_de = '/datenschutz/' %}{% assign url_it = '/it/privacy/' %}
+  {% when '/it/privacy/' %}{% assign url_de = '/datenschutz/' %}{% assign url_it = '/it/privacy/' %}
   {% else %}{% assign url_de = '/' %}{% assign url_it = '/it/' %}
 {% endcase %}
 <html lang="{{ lang }}">

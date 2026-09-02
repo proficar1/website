@@ -777,7 +777,13 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 @media (max-width: 560px) { .footer-grid { grid-template-columns: 1fr; } }
 
 .footer-brand { color: var(--fg); p { font-size: .9rem; max-width: 34ch; } }
-.site-footer h4 { margin-bottom: .9rem; }
+.site-footer h3.footer-head { margin-bottom: .9rem; }
+/* Der Footer hat keine übergeordnete Überschrift, deshalb h3 statt h4 -
+   sonst wird in der Gliederung eine Stufe übersprungen. Optik wie zuvor. */
+.footer-head {
+  font-size: .82rem; text-transform: uppercase; letter-spacing: .12em;
+  color: var(--fg-mute); font-weight: 600;
+}
 .site-footer p { font-size: .88rem; line-height: 1.7; }
 
 .footer-list {
@@ -788,6 +794,33 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 }
 .footer-name { font-weight: 600; color: var(--fg); }
 .footer-list--links { gap: .5rem; }
+
+.footer-legal {
+  display: flex; gap: 1.25rem; list-style: none; padding: 0; margin: 0;
+  a { color: var(--fg-mute); }
+  a:hover { color: var(--accent); }
+}
+
+/* Fließtext-Seiten wie Impressum und Datenschutz */
+.prose {
+  max-width: 68ch;
+  h2 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); margin: 2.75rem 0 .85rem; }
+  h3 { font-size: 1.02rem; margin: 1.75rem 0 .5rem; }
+  h2:first-child { margin-top: 0; }
+  p, ul, ol { color: var(--fg-mute); line-height: 1.75; }
+  p + p, p + ul, ul + p, p + ol, ol + p { margin-top: .85rem; }
+  ul, ol { padding-left: 1.25rem; }
+  li + li { margin-top: .35rem; }
+  a { color: var(--accent); border-bottom: 1px solid transparent; }
+  a:hover { border-bottom-color: var(--accent); }
+  strong { color: var(--fg); font-weight: 600; }
+
+  dl { display: grid; grid-template-columns: auto 1fr; gap: .4rem 1.25rem; margin-top: .85rem; }
+  dt { color: var(--fg-dim); }
+  dd { margin: 0; color: var(--fg-mute); }
+  @media (max-width: 560px) { dl { grid-template-columns: 1fr; gap: .1rem; }
+                              dd { margin-bottom: .6rem; } }
+}
 
 .footer-bottom {
   display: flex; flex-wrap: wrap; gap: .5rem 1.5rem; justify-content: space-between;

@@ -1,0 +1,94 @@
+---
+layout: base
+lang: de
+title: Impressum
+permalink: /impressum/
+---
+{% assign t = site.data.i18n.de %}
+
+<section class="page-head">
+  <div class="hero-bg" aria-hidden="true"><span class="glow glow--red"></span></div>
+  <div class="wrap">
+    <p class="eyebrow">Rechtliches</p>
+    <h1>Impressum</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    <h2>Anbieter</h2>
+    <dl>
+      <dt>Firma</dt>
+      <dd>{{ site.company.legal }}</dd>
+      <dt>Rechtsform</dt>
+      <dd>{{ site.company.form_de }} ({{ site.company.form_it }})</dd>
+      <dt>Inhaber</dt>
+      <dd>{{ site.company.owner }}</dd>
+      <dt>Anschrift</dt>
+      <dd>{{ site.company.street }}<br>
+          {{ site.company.zip }} {{ site.company.city }} ({{ site.company.province }})<br>
+          {{ site.company.country_de }}</dd>
+      <dt>Telefon</dt>
+      <dd><a href="tel:+{{ site.company.phone_raw }}">{{ site.company.phone }}</a></dd>
+      <dt>Fax</dt>
+      <dd>{{ site.company.fax }}</dd>
+      <dt>E-Mail</dt>
+      <dd><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></dd>
+      <dt>MwSt.-Nummer</dt>
+      <dd>{{ site.company.vat }}</dd>
+      <dt>Steuernummer</dt>
+      <dd>{{ site.company.tax_code }}</dd>
+      <dt>Firmenregister</dt>
+      <dd>Handelskammer Bozen, REA-Nr. {{ site.company.rea }}</dd>
+    </dl>
+
+    <h2>Verantwortlich für den Inhalt</h2>
+    <p>{{ site.company.owner }}, Anschrift wie oben.</p>
+
+    <h2>Ansprechpartner</h2>
+    <p>
+      {% for c in site.contacts %}<strong>{{ c.name }}</strong> — {{ c.role_de }},
+      <a href="tel:{{ c.phone | remove: ' ' }}">{{ c.phone }}</a>,
+      <a href="mailto:{{ c.email }}">{{ c.email }}</a>{% unless forloop.last %}<br>{% endunless %}
+      {% endfor %}
+    </p>
+
+    <h2>Haftung für Inhalte</h2>
+    <p>
+      Die Inhalte dieser Website werden mit Sorgfalt erstellt. Für Richtigkeit,
+      Vollständigkeit und Aktualität übernehmen wir jedoch keine Gewähr.
+      Produktbeschreibungen, Verbrauchsangaben und technische Werte sind
+      Anhaltspunkte und ersetzen weder das technische Merkblatt noch das
+      Sicherheitsdatenblatt des jeweiligen Produkts.
+    </p>
+    <p>
+      Alle Angaben zu Verfügbarkeit und Lieferung sind unverbindlich und stellen
+      kein bindendes Angebot dar. Verbindlich wird eine Lieferung erst mit unserer
+      ausdrücklichen Auftragsbestätigung.
+    </p>
+
+    <h2>Haftung für Links</h2>
+    <p>
+      Diese Website verweist an einzelnen Stellen auf externe Angebote, etwa auf
+      WhatsApp. Auf deren Inhalte haben wir keinen Einfluss und übernehmen dafür
+      keine Verantwortung. Für die Inhalte verlinkter Seiten ist stets deren
+      jeweiliger Anbieter verantwortlich.
+    </p>
+
+    <h2>Urheberrecht</h2>
+    <p>
+      Texte, Bilder und Gestaltung dieser Website sind urheberrechtlich geschützt.
+      Eine Verwendung außerhalb der gesetzlich zulässigen Fälle bedarf unserer
+      vorherigen schriftlichen Zustimmung. Produktnamen und Marken Dritter gehören
+      ihren jeweiligen Inhabern.
+    </p>
+
+    <h2>Streitbeilegung</h2>
+    <p>
+      Wir sind weder bereit noch verpflichtet, an Streitbeilegungsverfahren vor
+      einer Verbraucherschlichtungsstelle teilzunehmen.
+    </p>
+
+    <p><a href="{{ '/datenschutz/' | relative_url }}">Zur Datenschutzerklärung</a></p>
+  </div>
+</section>

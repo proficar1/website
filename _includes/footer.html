@@ -4,6 +4,8 @@
   {% assign home = '/it/' %}
   {% assign prods = '/it/prodotti/' %}
   {% assign contact = '/it/contatti/' %}
+  {% assign imprint = '/it/note-legali/' %}
+  {% assign privacy = '/it/privacy/' %}
   {% assign country = site.company.country_it %}
   {% assign city = site.company.city_it %}
   {% assign street = site.company.street_it %}
@@ -12,6 +14,8 @@
   {% assign home = '/' %}
   {% assign prods = '/produkte/' %}
   {% assign contact = '/kontakt/' %}
+  {% assign imprint = '/impressum/' %}
+  {% assign privacy = '/datenschutz/' %}
   {% assign country = site.company.country_de %}
   {% assign city = site.company.city %}
   {% assign street = site.company.street %}
@@ -26,7 +30,7 @@
     </div>
 
     <div>
-      <h4>{{ t.footer.company }}</h4>
+      <h3 class="footer-head">{{ t.footer.company }}</h3>
       <p class="muted">
         {{ legal }}<br>
         {{ street }}<br>
@@ -45,7 +49,7 @@
     </div>
 
     <div>
-      <h4>{{ t.footer.contact }}</h4>
+      <h3 class="footer-head">{{ t.footer.contact }}</h3>
       <ul class="footer-list">
         {% for c in site.contacts %}
         <li>
@@ -59,7 +63,7 @@
     </div>
 
     <div>
-      <h4>{{ t.nav.products }}</h4>
+      <h3 class="footer-head">{{ t.nav.products }}</h3>
       <ul class="footer-list footer-list--links">
         {% for cat in site.data.categories %}
         <li><a href="{{ prods | relative_url }}#{{ cat.id }}">{{ cat[lang].name }}</a></li>
@@ -71,6 +75,10 @@
 
   <div class="wrap footer-bottom">
     <p class="muted small">© {{ 'now' | date: "%Y" }} ProfiCar1 · {{ legal }}. {{ t.footer.rights }}</p>
+    <ul class="footer-legal small">
+      <li><a href="{{ imprint | relative_url }}">{{ t.footer.imprint }}</a></li>
+      <li><a href="{{ privacy | relative_url }}">{{ t.footer.privacy }}</a></li>
+    </ul>
     <p class="muted small">{{ t.footer.proto }}</p>
   </div>
 </footer>

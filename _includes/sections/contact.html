@@ -5,11 +5,13 @@
   {% assign city = site.company.city_it %}
   {% assign street = site.company.street_it %}
   {% assign legal = site.company.legal_it %}
+  {% assign privacy = '/it/privacy/' %}
 {% else %}
   {% assign country = site.company.country_de %}
   {% assign city = site.company.city %}
   {% assign street = site.company.street %}
   {% assign legal = site.company.legal %}
+  {% assign privacy = '/datenschutz/' %}
 {% endif %}
 
 <section class="section" id="contact">
@@ -104,10 +106,13 @@
           <textarea name="message" id="f-message" rows="5" required placeholder="{{ t.form.message_ph }}"></textarea>
         </label>
 
-        <label class="check">
-          <input type="checkbox" name="privacy" required>
-          <span class="small muted">{{ t.form.privacy }}</span>
-        </label>
+        {% comment %}
+          Kein Einwilligungshaken: eine Einwilligung, die man erzwingt, ist keine.
+          Die Bearbeitung der Anfrage stützt sich auf Vertragsanbahnung bzw.
+          berechtigtes Interesse, deshalb genügt der Hinweis mit Verweis.
+        {% endcomment %}
+        {% capture privacy_link %}<a href="{{ privacy | relative_url }}">{{ t.form.privacy_link }}</a>{% endcapture %}
+        <p class="small muted">{{ t.form.privacy_note | replace: '{link}', privacy_link }}</p>
 
         {% comment %} Köderfeld gegen Bots – Web3Forms verwirft alles, was hier ankommt. {% endcomment %}
         <input type="checkbox" name="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true" class="hp">

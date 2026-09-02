@@ -1,0 +1,92 @@
+---
+layout: base
+lang: it
+title: Note legali
+permalink: /it/note-legali/
+---
+{% assign t = site.data.i18n.it %}
+
+<section class="page-head">
+  <div class="hero-bg" aria-hidden="true"><span class="glow glow--red"></span></div>
+  <div class="wrap">
+    <p class="eyebrow">Note legali</p>
+    <h1>Note legali</h1>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap prose">
+    <h2>Titolare del sito</h2>
+    <dl>
+      <dt>Ditta</dt>
+      <dd>{{ site.company.legal_it }}</dd>
+      <dt>Forma giuridica</dt>
+      <dd>{{ site.company.form_it }}</dd>
+      <dt>Titolare</dt>
+      <dd>{{ site.company.owner }}</dd>
+      <dt>Sede</dt>
+      <dd>{{ site.company.street_it }}<br>
+          {{ site.company.zip }} {{ site.company.city_it }} ({{ site.company.province }})<br>
+          {{ site.company.country_it }}</dd>
+      <dt>Telefono</dt>
+      <dd><a href="tel:+{{ site.company.phone_raw }}">{{ site.company.phone }}</a></dd>
+      <dt>Fax</dt>
+      <dd>{{ site.company.fax }}</dd>
+      <dt>E-mail</dt>
+      <dd><a href="mailto:{{ site.company.email }}">{{ site.company.email }}</a></dd>
+      <dt>Partita IVA</dt>
+      <dd>{{ site.company.vat }}</dd>
+      <dt>Codice fiscale</dt>
+      <dd>{{ site.company.tax_code }}</dd>
+      <dt>Registro imprese</dt>
+      <dd>Camera di commercio di Bolzano, n. REA {{ site.company.rea }}</dd>
+    </dl>
+
+    <h2>Responsabile dei contenuti</h2>
+    <p>{{ site.company.owner }}, indirizzo come sopra.</p>
+
+    <h2>Referenti</h2>
+    <p>
+      {% for c in site.contacts %}<strong>{{ c.name }}</strong> — {{ c.role_it }},
+      <a href="tel:{{ c.phone | remove: ' ' }}">{{ c.phone }}</a>,
+      <a href="mailto:{{ c.email }}">{{ c.email }}</a>{% unless forloop.last %}<br>{% endunless %}
+      {% endfor %}
+    </p>
+
+    <h2>Responsabilità per i contenuti</h2>
+    <p>
+      I contenuti di questo sito sono redatti con cura, ma non garantiamo che siano
+      corretti, completi e aggiornati in ogni momento. Descrizioni, indicazioni di
+      consumo e dati tecnici sono valori orientativi e non sostituiscono la scheda
+      tecnica né la scheda di sicurezza del singolo prodotto.
+    </p>
+    <p>
+      Le indicazioni su disponibilità e consegna non sono vincolanti e non
+      costituiscono un'offerta. La fornitura diventa vincolante solo con la nostra
+      espressa conferma d'ordine.
+    </p>
+
+    <h2>Responsabilità per i collegamenti</h2>
+    <p>
+      In alcuni punti questo sito rimanda a servizi esterni, ad esempio a WhatsApp.
+      Non abbiamo alcuna influenza sui loro contenuti e non ce ne assumiamo la
+      responsabilità: di essi risponde sempre il rispettivo gestore.
+    </p>
+
+    <h2>Diritto d'autore</h2>
+    <p>
+      Testi, immagini e grafica di questo sito sono protetti dal diritto d'autore.
+      Ogni utilizzo che esuli dai casi consentiti dalla legge richiede il nostro
+      previo consenso scritto. Nomi di prodotti e marchi di terzi appartengono ai
+      rispettivi titolari.
+    </p>
+
+    <h2>Risoluzione delle controversie</h2>
+    <p>
+      Non siamo disponibili né obbligati a partecipare a procedure di risoluzione
+      delle controversie dinanzi a un organismo di conciliazione dei consumatori.
+    </p>
+
+    <p><a href="{{ '/it/privacy/' | relative_url }}">Vai all'informativa sulla privacy</a></p>
+  </div>
+</section>
