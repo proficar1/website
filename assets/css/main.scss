@@ -805,12 +805,10 @@ h1 + p, h2 + p, h1 + .lead, h2 + .lead { margin-top: 1.25rem; }
 }
 
 /* Fließtext-Seiten wie Impressum und Datenschutz */
+/* Liegt INNERHALB von .wrap – so behält der Rahmen seinen Seitenrand
+   und der Textblock beginnt linksbündig auf der Achse der Überschrift. */
 .prose {
-  /* Steht zusammen mit .wrap am selben Element: dessen margin-inline:auto
-     würde den schmaleren Textblock mittig setzen und damit gegen das
-     Raster der übrigen Seite versetzen. */
   max-width: 68ch;
-  margin-inline: 0;
   h2 { font-size: clamp(1.3rem, 2.4vw, 1.7rem); margin: 2.75rem 0 .85rem; }
   h3 { font-size: 1.02rem; margin: 1.75rem 0 .5rem; }
   h2:first-child { margin-top: 0; }
